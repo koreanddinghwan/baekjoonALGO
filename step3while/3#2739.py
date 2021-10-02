@@ -12,4 +12,5 @@ n = int(input())
 # 출력형식과 같게 N*1부터 N*9까지 출력한다.
 for i in range(0,10):
     print(n,'*', i, '=', n * i)
+    # 또는
     print("{} * {} = {}".format(n, i, n*i))
