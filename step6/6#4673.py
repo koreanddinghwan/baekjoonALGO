@@ -12,6 +12,6 @@ for num in range(1,10000):
 print(lst)    
 
 full_list = list(range(1,10000))
-# for i in full_list:
-    # if i not in lst:
-    #     print(i)
+for i in full_list:
+    if i not in lst:
+        print(i)
