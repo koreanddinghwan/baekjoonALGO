@@ -15,4 +15,3 @@ for i in range(t):
     print("Case #{}: {} + {} = {}".format(i+1,a,b,a+b))
 
 
-

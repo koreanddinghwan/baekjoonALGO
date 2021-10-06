@@ -20,10 +20,9 @@ t = int(sys.stdin.readline().rstrip())
 
 
 
-
 # 출력
 # 각 테스트케이스마다 A+B를 한 줄에 하나씩 순서대로 출력한다.
 
-for i in range(t + 1):
+for i in range(t):
     a,b = map(int, sys.stdin.readline().split())
     print(a + b)

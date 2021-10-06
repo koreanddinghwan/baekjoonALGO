@@ -4,10 +4,9 @@
 result = []
 for i in range(10):
     n = int(input())
-    result.append(n/42)
+    result.append(n%42)
 
-
+# set() 집합함수는 중복요소를 제거한다.
 a = set(result)
 
-for i in a:
-    print()
+print(len(a))
