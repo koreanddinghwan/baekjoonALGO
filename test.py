@@ -1,11 +1,17 @@
-def numoffact(n):
-    count,k = 0,1
+def factors(n):
+    count = 0
+    k = 1
     while k*k < n:
-        if n%k ==0:
-            count +=1
+        if n%k == 0:
+            count += 1
             k += 1
-            
-    return count
+        else:
+            k += 1
+            continue
+    if k * k == n:
+        return count * 2 + 1
+        
+    return count * 2
 
 
-print(numoffact(7))
+print(factors(10))
