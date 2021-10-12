@@ -1,20 +1,24 @@
 import sys
-
 m, n = map(int, sys.stdin.readline().split())
 
-def prime_list(n):
-    # 에라토스테네스의 체 초기화: n개 요소에 True 설정(소수로 간주)
-    sieve = [True] * (n+1)
-   
-    # n의 최대 약수가 sqrt(n) 이하이므로 i=sqrt(n)까지 검사
-    m = int(n ** 0.5)
-    for i in range(2, m + 1):
-        if sieve[i] == True:           # i가 소수인 경우
-            for j in range(i+i, n, i): # i이후 i의 배수들을 False 판정
-                sieve[j] = False
+#에라토스테네스의 체로 소수검증하기.
+def isprime(a):
+    if a == 1:
+        return False   #1인경우, 에라토스테네스의 체 적용 제외한다.
+    
+    else:
+        #2부터 입력 a의 제곱근까지의 수들 중에서 2부터 i에 할당한다.
+        for i in range(2, int(a**(1/2)) + 1): 
 
-    # 소수 목록 산출
-    return [i for i in range(m,n+1) if sieve[i] == True]
+            #만약 i로 나눠떨어진다면, 1을 제외한 수들 중 약수가 있다는 의미이므로 소수가 아니다.
+            if a % i == 0:
+                return False 
+    
+        #만약 소수이면 True를 리턴한다.
+        return True 
+    
 
 
-print(prime_list(n))
+for i in range(m,n+1):
+    if isprime(i):
+        print(i)
