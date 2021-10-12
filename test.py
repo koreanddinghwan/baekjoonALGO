@@ -1,24 +1,10 @@
 import sys
 
-n = int(sys.stdin.readline().rstrip())
+n = list(map(int,sys.stdin.readline().rstrip().split(";")))
 
-k = list(map(int, sys.stdin.readline().split()))
+n.sort()
+n.reverse()
 
-sosu = 0
-for i in k:
-    if i == 1:
-        continue
-    f = 1
-    cnt = 0
-    while f*f <= i:
-        if f != 1 and i % f == 0:
-            cnt += 1
-        
-        
-        f += 1
-        
-    if cnt == 0:
-        sosu += 1
+for i in n:
+    print("{0:>9,}".format(i))
 
-
-print(sosu)
