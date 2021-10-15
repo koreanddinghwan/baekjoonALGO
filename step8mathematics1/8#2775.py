@@ -20,41 +20,37 @@
 # ]
 #피보나치수열처럼 각 층의 1호는 모두 1이다.
 #k층 n호라면 실제 인덱스로 호출되려면
-#apart(k,n+1) 이 되어야한다.
+#apart(k,n-1) 이 되어야한다.
+
+
+def apart(a,b): #a층b호
+    if a == 0:
+        return b
+    if b == 1:
+        return 1
+
+        
+    if lst[a][b-1] == -1: #만약 a층 b호가 계산이 안되어있다면,
+        lst[a][b-1] = apart(a,b-1) + apart(a-1,b)
+        
+
+
+    return lst[a][b-1]
+
+lst = [[-1 for i in range(15)]for j in range(15)] # n,k가 14층,14호까지 있으므로, 초기값을 14*14 2차원 배열로 나타낸다.
+                                                  # 리스트를 for문 바깥에 두면, 초기화되지 않고 계산값을 유지한다.
 
 import sys
 
 t = int(sys.stdin.readline().rstrip())
 
 
-def apart(a,b): #a층b호
-    if a == 0:
-        return b
-    elif b == 1:
-        return 1
-    else:    
-        if lst[a][b-1] == -1: #만약 a층 b호가 계산이 안되어있다면,
-            lst[a][b-1] = apart(a,b-1) + apart(a-1,b)
-
-            
-
-    return lst[a][b-1]
-
-
 for i in range(t):
-    
-    k = int(sys.stdin.readline().rstrip()) #k는 1부터 층수
-    n = int(sys.stdin.readline().rstrip()) #n은 1부터 14까지 입력된다.
+    # lst = [[-1 for i in range(15)]for j in range(15)]
+    k = int(sys.stdin.readline().rstrip()) #n,k는 1이상 14이하이다. 따라서 최대 14층, 14호까지 있다.
+    n = int(sys.stdin.readline().rstrip()) 
 
-    lst = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14]] + [[1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]]*(k+1)
-    print(lst)
     print(apart(k,n))
-    print(lst)
-
-
-
-        
-
 
 
 
