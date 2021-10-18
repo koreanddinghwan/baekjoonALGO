@@ -28,19 +28,18 @@
 # 출력
 # 프로그램은 표준 출력에 출력한다. 각 테스트 데이터마다 정확히 한 행을 출력하는데, 내용은 N 번째 손님에게 배정되어야 하는 방 번호를 출력한다.
 
+#방생성기
 
+def room_generator(h,w,n):     
+    cheung = (n-1)%h+1
+    ho = (n-1)//h+1
 
-import sys, math
+    return print('{}{:02}'.format(cheung,ho))
+
+import sys
 
 t = int(sys.stdin.readline().rstrip())
+
 for i in range(t):
-
-    h, w, n = map(int, sys.stdin.readline().split())
-
-    room_w = math.ceil(n/h)
-    if n == h:
-        room_h = n
-    else:
-        room_h = n % h
-
-    print("{}{:02}".format(room_h,room_w))
+    H, W, N = map(int, sys.stdin.readline().split())
+    room_generator(H,W,N)
