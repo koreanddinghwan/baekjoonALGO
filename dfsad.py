@@ -1,5 +1,36 @@
-a = [1,2,3]
+# class Knight:
+#     def __init__(self, health, mana, armor):
+#         self.health = health
+#         self.mana = mana
+#         self.armor = armor
+
+#     def slash(self):
+#         print('베기')
 
 
-if a[-2]:
-    print(a[-2])
+# x = Knight(health=542.4, mana=210.3, armor=38)
+# print(x.health, x.mana, x.armor)
+# x.slash()
+
+class Annie:
+    def __init__(self, health, mana, ability_power):
+        self.health = health
+        self.mana = mana
+        self.ability_power = ability_power
+
+    def tibbers(self):
+        damage = self.ability_power * 0.65 + 400
+        print('티버: 피해량 {}'.format(damage))
+
+
+
+
+
+
+health, mana, ability_power = map(float, input().split())
+ 
+x = Annie(health=health, mana=mana, ability_power=ability_power)
+x.tibbers()
+
+
+
