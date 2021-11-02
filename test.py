@@ -89,4 +89,58 @@
 #         v = 0
 #     new_per.append(v)
 
-# print(new_per)
+# # print(new_per)
+
+
+
+# 표준 입력으로 문자열이 입력됩니다. 
+# 다음 소스 코드를 완성하여 입력된 문자열이 회문이면 문자열을 그대로 출력하고, 
+# 회문이 아니면 '회문이 아닙니다.'를 출력하도록 만드세요. palindrome 함수와 NotPalindromeError 예외를 작성해야 합니다.
+
+
+# def palindrome(word):
+#     try:
+        
+#         if word != word[::-1]:
+#             raise NotPalindromeError
+#         else:
+#             print(word)
+    
+#     except Exception as e:
+#         raise
+
+
+
+# class NotPalindromeError(Exception):
+#     def __init__(self):
+#         super().__init__('회문이 아닙니다.')
+
+# try:
+#     word = input()
+#     palindrome(word)
+# except Exception as e:
+#     print(e)
+
+# i = int(input())
+
+# from
+
+
+
+# from calcpkg import geometry
+# from calcpkg import operation
+
+
+
+# n = int(input())
+# print(operation.squareroot(n))
+# print(geometry.circle_area(n))
+
+# from calcpkg.geometry import circle_area as c
+# from calcpkg.operation import squareroot as s
+# n = int(input())
+# print(s(n))
+# print(c(n))
+
+import calcpkg.geometry
+
