@@ -16,6 +16,7 @@ for b in range(m):
 s1 = set(never_heard_people)
 s2 = set(never_seen_people)
 
+
 inter = s1.intersection(s2)
 inter = list(inter)
 
