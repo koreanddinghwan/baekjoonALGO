@@ -10,7 +10,7 @@ for i in range(n):
     lst.append([x,y])
 
 
-a = sorted(lst, key = lambda x:x[1])
-b = sorted(a, key= lambda x:x[0])
+a = sorted(lst, key = lambda x:x[0])
+b = sorted(a, key= lambda x:x[1])
 for i in b:
     print(i[0], i[1])
