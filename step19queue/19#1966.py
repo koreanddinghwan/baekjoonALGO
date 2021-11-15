@@ -4,20 +4,36 @@ from collections import deque
 t = int(sys.stdin.readline().rstrip())
 
 
-priodeq = deque()
+for i in range(t): #t만큼
 
-for i in range(t):
-    doc_num, wheredoc = map(int, sys.stdin.readline().split())
+    #n,m입력받음
+    n,m = map(int, sys.stdin.readline().split())
 
-    prior = list(map(int, sys.stdin.readline().split()))
-    for i in prior:
-        priodeq.append(i)
+    #중요도 리스트로 입력받음
+    doc_priority = deque(list(map(int, sys.stdin.readline().split())))
 
-    for i in range(len(priodeq)):
-        if priodeq[i] < max(priodeq):
-            priodeq.append(priodeq.popleft())
 
-        elif priodeq[i] == max(priodeq):
-            print(i,priodeq[i])
+    #현재 타겟의 인덱스 = m
+    target_indx = deque(list(range(n)))
 
-    
+
+    #출력회수
+    cnt = 0
+    while doc_priority:
+        if doc_priority[0] == max(doc_priority):
+            cnt += 1
+            doc_priority.popleft()
+            if target_indx.popleft() == m:
+                print(cnt)
+                break
+
+
+        else:
+            doc_priority.append(doc_priority.popleft())
+            target_indx.append(target_indx.popleft())
+
+
+
+
+
+
